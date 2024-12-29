@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <style>
         :root {
+            --heading: #2D3748;
             --primary: #4965F4;
             --secondary: #666;
             --background: #fff;
@@ -18,7 +19,8 @@
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --primary: #4965F4;
+                --heading: #E2E8F0;      /* Light gray for headers */
+                --primary: #7C8FFF;      /* Lighter, more visible blue for links in dark mode */
                 --secondary: #D1D5DB;
                 --background: #0F172A;
                 --surface: #1E293B;
@@ -47,7 +49,7 @@
             font-weight: 600;
             margin: 2rem 0;
             letter-spacing: -0.02em;
-            color: var(--primary);
+            color: var(--heading);
         }
 
         h2 {
@@ -55,6 +57,15 @@
             font-weight: 500;
             margin: 3rem 0 1.5rem 0;
             letter-spacing: -0.01em;
+            color: var(--heading);
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 1rem 0;
+            letter-spacing: -0.01em;
+            color: var(--heading);
         }
 
         p {
@@ -80,14 +91,26 @@
             position: relative;
         }
 
-        .intro::before {
-            content: '';
+        .intro {
+            position: relative;  /* Ensure this is here for absolute positioning */
+        }
+        
+        .easter-egg-dot {
             position: absolute;
             top: 1rem;
             right: 1rem;
             width: 0.5rem;
             height: 0.5rem;
             background: var(--primary);
+            border-radius: 50%;  /* Makes it perfectly round */
+            transition: transform 0.3s ease, background-color 0.3s ease;  /* Smooth transition for hover effects */
+            cursor: pointer;  /* Shows hand cursor on hover */
+            text-decoration: none;
+        }
+
+        .easter-egg-dot:hover {
+            transform: scale(1.5);  /* Grows slightly on hover */
+            background: var(--heading);  /* Changes color on hover */
         }
 
         .intro p:last-child {
@@ -156,10 +179,9 @@
 <body>
     <h1>Alper Aydemir</h1>
 
-
-
-    <div class="intro">
-        <p>
+            <div class="intro">
+            <a href="https://volumental.com" class="easter-egg-dot" title="Join us!"></a>
+            <p>
             CEO of Volumental, leading the transformation of retail through computer vision and AI. 
             We're making standard sizes obsolete by creating perfect fits for everyone, everywhere.
         </p>
@@ -171,7 +193,6 @@
                 both in-store and online. We're building the future where perfect fit is the new standard.
             </p>
         </div>
-
     </div>
 
     <h2>Writing</h2>
@@ -192,7 +213,5 @@
     <script>
         feather.replace();
     </script>
-
-    
 </body>
 </html>

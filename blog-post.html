@@ -10,7 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <style>
         :root {
-            --primary: #4965F4;
+            --heading: #2D3748;      /* Dark gray for headers */
+            --primary: #4965F4;      /* Blue for links */
             --secondary: #666;
             --background: #fff;
             --surface: #f7f7f7;
@@ -18,7 +19,8 @@
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --primary: #4965F4;
+                --heading: #E2E8F0;      /* Light gray for headers */
+                --primary: #7C8FFF;      /* Lighter blue for links in dark mode */
                 --secondary: #D1D5DB;
                 --background: #0F172A;
                 --surface: #1E293B;
@@ -66,6 +68,7 @@
             line-height: 1.3;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
+            color: var(--heading);
         }
 
         .meta {
@@ -87,7 +90,7 @@
             font-weight: 600;
             margin: 3rem 0 1.5rem;
             letter-spacing: -0.02em;
-            color: var(--primary);
+            color: var(--heading);
         }
 
         article a {
