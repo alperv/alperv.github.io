@@ -10,19 +10,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <style>
         :root {
-            --primary: #000;
+            --primary: #4965F4;
             --secondary: #666;
-            --blue: #0066FF;
             --background: #fff;
             --surface: #f7f7f7;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --primary: #fff;
+                --primary: #4965F4;
                 --secondary: #888;
-                --background: #000;
-                --surface: #111;
+                --background: #000033;
+                --surface: #000066;
             }
         }
 
@@ -35,8 +34,8 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-font-smoothing: antialiased;
-            line-height: 1.7;
-            max-width: 680px;
+            line-height: 1.6;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
             background: var(--background);
@@ -44,7 +43,7 @@
         }
 
         nav {
-            margin: 2rem 0 4rem;
+            margin: 2rem 0;
         }
 
         nav a {
@@ -54,6 +53,7 @@
             align-items: center;
             gap: 0.5rem;
             width: fit-content;
+            font-family: 'Inter';
         }
 
         nav a:hover {
@@ -72,11 +72,14 @@
             color: var(--secondary);
             margin-bottom: 3rem;
             font-size: 0.95rem;
+            font-family: 'Inter';
         }
 
         article p {
             margin: 1.5rem 0;
             font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--secondary);
         }
 
         article h2 {
@@ -84,10 +87,11 @@
             font-weight: 600;
             margin: 3rem 0 1.5rem;
             letter-spacing: -0.02em;
+            color: var(--primary);
         }
 
         article a {
-            color: var(--blue);
+            color: var(--primary);
             text-decoration: none;
         }
 
@@ -98,19 +102,12 @@
         article ul, article ol {
             margin: 1.5rem 0;
             padding-left: 1.5rem;
+            color: var(--secondary);
         }
 
         article li {
             margin: 0.5rem 0;
             font-size: 1.1rem;
-        }
-
-        blockquote {
-            margin: 2rem 0;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--secondary);
-            font-style: italic;
-            color: var(--secondary);
         }
 
         .image-container {
@@ -130,6 +127,15 @@
             font-size: 0.9rem;
             margin-top: 0.5rem;
             text-align: center;
+            font-family: 'Inter';
+        }
+
+        blockquote {
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--primary);
+            font-style: italic;
+            color: var(--secondary);
         }
 
         code {
@@ -163,7 +169,7 @@
             }
 
             nav {
-                margin: 1.5rem 0 3rem;
+                margin: 1.5rem 0;
             }
         }
     </style>
@@ -172,13 +178,13 @@
     <nav>
         <a href="/">
             <i data-feather="arrow-left"></i>
-            <span>Back to home</span>
+            <span>Back home</span>
         </a>
     </nav>
 
     <article>
         <h1>Lorem Ipsum: The Art of Placeholder Text</h1>
-        <div class="meta">March 15, 2024 · 6 min read</div>
+        <div class="meta">March 15, 2024</div>
 
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
@@ -187,7 +193,7 @@
         </p>
 
         <div class="image-container">
-            <img src="/api/placeholder/800/400" alt="A beautiful landscape">
+            <img src="https://picsum.photos/800/400" alt="A beautiful landscape">
             <div class="image-caption">A stunning view of the mountain range at sunrise</div>
         </div>
 
@@ -213,7 +219,7 @@
         </p>
 
         <div class="image-container">
-            <img src="/api/placeholder/800/500" alt="Modern office space">
+            <img src="https://picsum.photos/800/500" alt="Modern office space">
             <div class="image-caption">A contemporary workspace designed for collaboration</div>
         </div>
 
@@ -236,8 +242,14 @@
         </p>
     </article>
 
+    <nav style="margin-top: 4rem;">
+        <a href="/">
+            <i data-feather="arrow-left"></i>
+            <span>Back home</span>
+        </a>
+    </nav>
+
     <script>
-        // Initialize Feather icons
         feather.replace();
     </script>
 </body>
