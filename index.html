@@ -10,19 +10,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <style>
         :root {
-            --primary: #000;
+            --primary: #4965F4;
             --secondary: #666;
-            --blue: #0066FF;
             --background: #fff;
             --surface: #f7f7f7;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --primary: #fff;
+                --primary: #4965F4;
                 --secondary: #888;
-                --background: #000;
-                --surface: #111;
+                --background: #000033;
+                --surface: #000066;
             }
         }
 
@@ -36,7 +35,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-font-smoothing: antialiased;
             line-height: 1.6;
-            max-width: 640px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
             background: var(--background);
@@ -44,27 +43,29 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 600;
             margin: 2rem 0;
             letter-spacing: -0.02em;
+            color: var(--primary);
         }
 
         h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 500;
             margin: 3rem 0 1.5rem 0;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
 
         p {
             margin: 1rem 0;
             color: var(--secondary);
             font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         a {
-            color: var(--blue);
+            color: var(--primary);
             text-decoration: none;
         }
 
@@ -72,21 +73,30 @@
             text-decoration: underline;
         }
 
-        .bio {
-            background: var(--surface);
+        .intro {
+            border: 1px solid var(--primary);
             padding: 2rem;
-            border-radius: 12px;
             margin: 2rem 0 3rem 0;
+            position: relative;
         }
 
-        .bio p {
-            margin: 0;
-            color: var(--primary);
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 0.5rem;
+            height: 0.5rem;
+            background: var(--primary);
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
         }
 
         .social {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             margin: 1.5rem 0;
         }
 
@@ -95,14 +105,12 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: color 0.2s ease, background 0.2s ease;
+            font-size: 0.95rem;
+            font-family: 'Inter';
         }
 
         .social a:hover {
             color: var(--primary);
-            background: var(--surface);
             text-decoration: none;
         }
 
@@ -112,14 +120,16 @@
 
         .writing-list li {
             margin: 1rem 0;
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1rem;
+            align-items: baseline;
         }
 
         .writing-list .date {
             color: var(--secondary);
             font-size: 0.9rem;
-            margin-right: 1rem;
-            display: inline-block;
-            min-width: 100px;
+            font-family: 'Inter';
         }
 
         @media (max-width: 600px) {
@@ -127,14 +137,18 @@
                 padding: 1rem;
             }
 
-            .bio {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .intro {
                 padding: 1.5rem;
                 margin: 1.5rem 0 2rem 0;
             }
 
-            .writing-list .date {
-                display: block;
-                margin-bottom: 0.25rem;
+            .writing-list li {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
             }
         }
     </style>
@@ -142,37 +156,51 @@
 <body>
     <h1>Alper Aydemir</h1>
 
-    <div class="social">
-        <a href="https://twitter.com/alpervm" target="_blank" rel="noopener noreferrer">
-            <i data-feather="twitter"></i>
-            <span>Twitter</span>
-        </a>
-        <a href="https://www.linkedin.com/in/alpervm/" target="_blank" rel="noopener noreferrer">
-            <i data-feather="linkedin"></i>
-            <span>LinkedIn</span>
-        </a>
-    </div>
 
-    <div class="bio">
+
+    <div class="intro">
         <p>
             CEO of Volumental, leading the transformation of retail through computer vision and AI. 
-            We're making standard sizes obsolete by creating perfect fits for everyone, everywhere. 
-            Our 3D scanning technology and AI algorithms are revolutionizing how people shop for footwear, 
-            both in-store and online.
+            We're making standard sizes obsolete by creating perfect fits for everyone, everywhere.
         </p>
+
+        <div class="bio-section">
+            <h4>Current Focus</h4>
+            <p>
+                Our 3D scanning technology and AI algorithms are revolutionizing how people shop for footwear, 
+                both in-store and online. We're building the future where perfect fit is the new standard.
+            </p>
+        </div>
+
     </div>
 
     <h2>Writing</h2>
     <ul class="writing-list">
         <li>
-            <span class="date">Mar 2024</span>
-            <a href="blog-post.html">The Future of Retail is AI-Powered and Personal</a>
+            <span class="date">2024-03</span>
+            <a href="posts/future-of-retail.html">The Future of Retail is AI-Powered and Personal</a>
+        </li>
+        <li>
+            <span class="date">2024-02</span>
+            <a href="posts/computer-vision-retail.html">How Computer Vision is Transforming Retail</a>
+        </li>
+        <li>
+            <span class="date">2024-01</span>
+            <a href="posts/building-volumental.html">Building Volumental: Our Journey So Far</a>
         </li>
     </ul>
-
+    <div class="social">
+        <a href="https://twitter.com/alperaydemir" target="_blank" rel="noopener noreferrer">
+            <i data-feather="twitter"></i>
+        </a>
+        <a href="https://linkedin.com/in/alperaydemir" target="_blank" rel="noopener noreferrer">
+            <i data-feather="linkedin"></i>
+        </a>
+    </div>
     <script>
-        // Initialize Feather icons
         feather.replace();
     </script>
+
+    
 </body>
 </html>
