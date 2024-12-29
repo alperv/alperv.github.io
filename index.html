@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alper Aydemir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <style>
+        :root {
+            --primary: #000;
+            --secondary: #666;
+            --blue: #0066FF;
+            --background: #fff;
+            --surface: #f7f7f7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #fff;
+                --secondary: #888;
+                --background: #000;
+                --surface: #111;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--background);
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 2rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin: 1rem 0;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .bio {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .bio p {
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .social {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .social a {
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+
+        .social a:hover {
+            color: var(--primary);
+            background: var(--surface);
+            text-decoration: none;
+        }
+
+        .writing-list {
+            list-style: none;
+        }
+
+        .writing-list li {
+            margin: 1rem 0;
+        }
+
+        .writing-list .date {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .bio {
+                padding: 1.5rem;
+                margin: 1.5rem 0 2rem 0;
+            }
+
+            .writing-list .date {
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Alper Aydemir</h1>
+
+    <div class="social">
+        <a href="https://twitter.com/alperaydemir" target="_blank" rel="noopener noreferrer">
+            <i data-feather="twitter"></i>
+            <span>Twitter</span>
+        </a>
+        <a href="https://linkedin.com/in/alperaydemir" target="_blank" rel="noopener noreferrer">
+            <i data-feather="linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+    </div>
+
+    <div class="bio">
+        <p>
+            CEO of Volumental, leading the transformation of retail through computer vision and AI. 
+            We're making standard sizes obsolete by creating perfect fits for everyone, everywhere. 
+            Our 3D scanning technology and AI algorithms are revolutionizing how people shop for footwear, 
+            both in-store and online.
+        </p>
+    </div>
+
+    <h2>Writing</h2>
+    <ul class="writing-list">
+        <li>
+            <span class="date">Mar 2024</span>
+            <a href="posts/blog-post.html">The Future of Retail is AI-Powered and Personal</a>
+        </li>
+    </ul>
+
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
