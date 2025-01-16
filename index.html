@@ -11,20 +11,27 @@
     <style>
         :root {
             --heading: #2D3748;
-            --primary: #4965F4;
-            --secondary: #666;
-            --background: #fff;
+            --primary: #0D9488;
+            --secondary: #2D3748;
+            --background: #fffcf5;
             --surface: #f7f7f7;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --heading: #E2E8F0;      /* Light gray for headers */
-                --primary: #7C8FFF;      /* Lighter, more visible blue for links in dark mode */
+                --heading: #E2E8F0;
+                --primary: #0D9488;
                 --secondary: #D1D5DB;
                 --background: #0F172A;
                 --surface: #1E293B;
             }
+        }
+
+        html {
+            border-color: var(--primary);
+            border-style: solid;
+            border-width: 4px 0 0 0;
+            overflow-y: scroll;
         }
 
         * {
@@ -37,11 +44,11 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-font-smoothing: antialiased;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 640px;
             margin: 0 auto;
             padding: 2rem;
             background: var(--background);
-            color: var(--primary);
+            color: var(--secondary);
         }
 
         h1 {
@@ -91,32 +98,6 @@
             position: relative;
         }
 
-        .intro {
-            position: relative;  /* Ensure this is here for absolute positioning */
-        }
-        
-        .easter-egg-dot {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            background: var(--primary);
-            border-radius: 50%;  /* Makes it perfectly round */
-            transition: transform 0.3s ease, background-color 0.3s ease;  /* Smooth transition for hover effects */
-            cursor: pointer;  /* Shows hand cursor on hover */
-            text-decoration: none;
-        }
-
-        .easter-egg-dot:hover {
-            transform: scale(1.5);  /* Grows slightly on hover */
-            background: var(--heading);  /* Changes color on hover */
-        }
-
-        .intro p:last-child {
-            margin-bottom: 0;
-        }
-
         .social {
             display: flex;
             gap: 0.75rem;
@@ -129,7 +110,6 @@
             align-items: center;
             gap: 0.5rem;
             font-size: 0.95rem;
-            font-family: 'Inter';
         }
 
         .social a:hover {
@@ -152,7 +132,11 @@
         .writing-list .date {
             color: var(--secondary);
             font-size: 0.9rem;
-            font-family: 'Inter';
+        }
+
+        hr {
+            border: 1px solid var(--primary);
+            margin: 2rem 0;
         }
 
         @media (max-width: 600px) {
@@ -179,37 +163,42 @@
 <body>
     <h1>Alper Aydemir</h1>
 
-            <div class="intro">
-            <a href="https://volumental.com" class="easter-egg-dot" title="Join us!"></a>
-            <p>
-            CEO of Volumental, leading the transformation of retail through computer vision and AI. 
-            We're making standard sizes obsolete by creating perfect fits for everyone, everywhere.
+    <div class="intro">
+        <p>
+            CEO of Volumental. We're transforming retail through computer vision and AI, making standard sizes obsolete by creating perfect fits for everyone, everywhere.
         </p>
 
-        <div class="bio-section">
-            <h4>Current Focus</h4>
-            <p>
-                Our 3D scanning technology and AI algorithms are revolutionizing how people shop for footwear, 
-                both in-store and online. We're building the future where perfect fit is the new standard.
-            </p>
-        </div>
+        <h4>Current Focus</h4>
+        <p>
+            Our 3D scanning technology and AI algorithms are revolutionizing how people shop for footwear, both in-store and online. We're building the future where perfect fit is the new standard.
+        </p>
+
+        <p>
+            Our e-commerce solution allows customers to scan their feet directly on product pages using just their smartphone, bridging the gap between digital convenience and personalized service.
+        </p>
     </div>
+
+    <hr>
 
     <h2>Writing</h2>
     <ul class="writing-list">
         <li>
             <span class="date">2024-03</span>
-            <a href="blog-post.html">Some Post</a>
+            <a href="blog-post.html">Lorem Ipsum: The Art of Placeholder Text</a>
         </li>
     </ul>
+
     <div class="social">
         <a href="https://twitter.com/alpervm" target="_blank" rel="noopener noreferrer">
             <i data-feather="twitter"></i>
+            <span>Twitter</span>
         </a>
         <a href="https://linkedin.com/in/alpervm" target="_blank" rel="noopener noreferrer">
             <i data-feather="linkedin"></i>
+            <span>LinkedIn</span>
         </a>
     </div>
+
     <script>
         feather.replace();
     </script>
